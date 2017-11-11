@@ -1,0 +1,104 @@
+form.appForm(
+  novalidate
+)
+  .row
+    .col--xs12
+      .appFormGroup.appFormGroup--cozy
+        .appSubHeading.appSubHeading--standalone
+          | {{'CONFIGURATION' | translate}}
+
+  .row
+    .col--xs3.label--left
+      label.appLabel--primary.appLabel--boxAlign
+        | {{'FIRST_NAME' | translate}}
+    .col--xs6.appFormGroup
+      input.input--full(
+        ng-model = "configureFormCtrl.configuration.firstName"
+        type     = "text"
+      )
+
+  .row
+    .col--xs3.label--left
+      label.appLabel--primary.appLabel--boxAlign
+        | {{'LAST_NAME' | translate}}
+    .col--xs6.appFormGroup
+      input.input--full(
+        ng-model = "configureFormCtrl.configuration.lastName"
+        type     = "text"
+      )
+
+  .row
+    .col--xs3.label--left
+      label.appLabel--primary
+        | {{'FAVORITE_COLORS' | translate}}
+    .col--xs8.appFormGroup
+      .appInputGroup
+        input(
+          ng-repeat-start = "item in configureFormCtrl.favoriteColors"
+          ng-checked      = "configureFormCtrl.configuration.favoriteColors.indexOf(item) > -1"
+          ng-click        = "configureFormCtrl.toggleFavoriteColors(item)"
+          value           = "{{ item }}"
+          id              = "{{ 'colorsCheck' + $index }}"
+          type            = "checkbox"
+          name            = "favoriteColorsCheck"
+        )
+        label(
+          ng-repeat-end
+          for = "{{ 'colorsCheck' + $index }}"
+        ) {{ item | translate}}
+
+  .row
+    .col--xs3.label--left
+      label.appLabel--primary
+        | {{'FAVORITE_CITY' | translate}}
+    .col--xs8.appFormGroup
+      .appInputGroup.appInputGroup--cozy(
+        ng-repeat = "item in configureFormCtrl.favoriteCities"
+      )
+        input(
+          ng-value = "item"
+          ng-model = "configureFormCtrl.configuration.favoriteCity"
+          type     = "radio"
+          name     = "radioDemo"
+          id       = "{{ 'radio' + $index }}"
+        )
+        label(
+          for = "{{ 'radio' + $index }}"
+        ) {{ item | translate}}
+
+  .row
+    .col--xs3.label--left
+      label.appLabel--primary
+        | {{'VERIFIED' | translate}}
+    .col--xs8.appFormGroup
+      .toggle.appToggle(
+        data-on  = "on"
+        data-off = "off"
+      )
+        input(
+          ng-model = "configureFormCtrl.configuration.verified"
+          id       = "selectedToggle"
+          type     = "checkbox"
+        )
+        label(
+          for = "selectedToggle"
+        )
+
+  .appFormFooter.appFormFooter--standalone(
+    style="padding: 0px"
+  )
+    .appFormFooter__left
+      button.appMainButton.appMainButton--success(
+        ng-click = "configureFormCtrl.applyForm(configureFormCtrl.configuration)"
+      ) {{'APPLY_CHANGES' | translate}}
+      button.appMainButton.appMainButton--transparent(
+        ng-click = "configureFormCtrl.resetForm()"
+      ) {{'RESET' | translate}}
+    .appFormFooter__right
+      button.appMainButton.appMainButton--danger(
+        ui-sref = "home"
+      ) {{'CANCEL' | translate}}
+
+  //- pre configuration {{ configureFormCtrl.configuration | json }}
+
+

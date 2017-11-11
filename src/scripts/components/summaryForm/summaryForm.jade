@@ -1,0 +1,58 @@
+form.appForm(
+  novalidate
+  ng-show="summaryFormCtrl.summary"
+)
+  .row
+    .col--xs12
+      .appFormGroup.appFormGroup--cozy
+        .appSubHeading.appSubHeading--standalone
+          | {{'RESPONSE' | translate}}
+
+  .row
+    .col--xs6.label--right
+      label.appLabel--primary.appLabel--boxAlign
+        | {{'FIRST_NAME' | translate}}
+    .col--xs1
+    .col--xs5.label--left
+      label.appLabel--boxAlign
+        | {{ summaryFormCtrl.summary.firstName }}
+
+  .row
+    .col--xs6.label--right
+      label.appLabel--primary.appLabel--boxAlign
+        | {{'LAST_NAME' | translate}}
+    .col--xs1
+    .col--xs5.label--left
+      label.appLabel--boxAlign
+        | {{ summaryFormCtrl.summary.lastName }}
+
+  .row
+    .col--xs6.label--right
+      label.appLabel--primary.appLabel--boxAlign
+        | {{'FAVORITE_COLORS' | translate}}
+    .col--xs1
+    .col--xs5.label--left
+      label.appLabel--boxAlign(
+        ng-repeat = "item in summaryFormCtrl.summary.favoriteColors"
+      )
+        | {{ item | translate }} {{$last ? '' : ', '}}
+
+  .row
+    .col--xs6.label--right
+      label.appLabel--primary.appLabel--boxAlign
+        | {{'FAVORITE_CITY' | translate}}
+    .col--xs1
+    .col--xs5.label--left
+      label.appLabel--boxAlign
+        | {{ summaryFormCtrl.summary.favoriteCity | translate }}
+
+  .row
+    .col--xs6.label--right
+      label.appLabel--primary.appLabel--boxAlign
+        | {{'VERIFIED' | translate}}
+    .col--xs1
+    .col--xs5.label--left
+      label.appLabel--boxAlign
+        | {{ summaryFormCtrl.summary.verified? 'YES': 'NO' | translate }}
+
+  //- pre {{ summaryFormCtrl.summary | json }}
