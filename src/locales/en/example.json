@@ -1,4 +1,26 @@
 {
   "EXAMPLE_HELLO_WORLD": "Hello world",
-  "EXAMPLE_SITE_CONFIGURE": "Configure me!"
+  "EXAMPLE_SITE_CONFIGURE": "Configure me!",
+  "CONFIGURATION": "Configuration",
+  "FIRST_NAME": "First Name",
+  "LAST_NAME": "Last Name",
+  "FAVORITE_COLORS": "Favorite Colors",
+  "RED": "Red",
+  "ORANGE": "Orange",
+  "YELLOW": "Yellow",
+  "GREEN": "Green",
+  "BLUE": "Blue",
+  "PURPLE": "Purple",
+  "BLACK": "Black",
+  "FAVORITE_CITY": "Favorite City",
+  "CHICAGO": "Chicago",
+  "SEATTLE": "Seattle",
+  "LOS_ANGELES": "Los Angeles",
+  "VERIFIED": "Verified",
+  "YES": "Yes",
+  "NO": "No",
+  "APPLY_CHANGES": "APPLY CHANGES",
+  "RESET": "RESET",
+  "CANCEL": "CANCEL",
+  "RESPONSE": "Response"
 }

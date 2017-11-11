@@ -33,6 +33,12 @@ If you're on a Mac and you get the error `Error: EMFILE, too many open files` yo
 ulimit -n 4096
 ```
 
+If you're get the error below you should [reinstall your compass](https://github.com/roots/roots-sass/issues/9#issuecomment-44667521)
+```
+Running "sass:main_example" (sass) task
+ERROR: Cannot load compass.
+```
+
 ## Dependencies
 
 Project uses `npm` package managers.
